@@ -6,8 +6,6 @@ const https = require('https');
 const express = require('express');
 const app = express()
 
-const targetBaseUrl = 'http://hubs.ieeevr.online';
-
 app.use(express.static('public'))
 
 app.get('/.well-known/acme-challenge/sdk7Ne4KyfDw6dLwD39qIqJ8BcFiAWTLYLeZjhE9ylc', (req,res) => {
