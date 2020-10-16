@@ -12,9 +12,9 @@ app.get('/.well-known/acme-challenge/sdk7Ne4KyfDw6dLwD39qIqJ8BcFiAWTLYLeZjhE9ylc
     res.send("sdk7Ne4KyfDw6dLwD39qIqJ8BcFiAWTLYLeZjhE9ylc.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI")
 })
   
-// Starting both http & https servers
-const httpServer = http.createServer(app);
-httpServer.listen(3000, () => console.log('HTTP Server running on port 3000'))
+// // Starting both http & https servers
+// const httpServer = http.createServer(app);
+// httpServer.listen(3000, () => console.log('HTTP Server running on port 3000'))
 
 /////////
 const privKeyFileName = '/etc/letsencrypt/live/aelatgt.net/privkey.pem'
