@@ -22,6 +22,7 @@ const privKeyFileName = "/etc/letsencrypt/live/aelatgt.net/privkey.pem";
 const certFileName = "/etc/letsencrypt/live/aelatgt.net/cert.pem";
 const chainFileName = "/etc/letsencrypt/live/aelatgt.net/chain.pem";
 
+// this will either be an http or https server
 var httpServer;
 
 if (
@@ -53,7 +54,6 @@ if (
 }
 
 // Starting for either the http or https servers
-//const io = socketIO(httpServer);
 const io = socketIO.listen(httpServer);
 
 io.sockets.on("connection", (socket) => {
