@@ -53,8 +53,9 @@ if (
 }
 
 // Starting for either the http or https servers
-const io = socketIO(httpServer);
+//const io = socketIO(httpServer);
+const io = socketIO.listen(httpServer);
 
-io.on("connection", (socket) => {
+io.sockets.on("connection", (socket) => {
   console.log("a user connected");
 });
