@@ -17,20 +17,12 @@ app.get(
   }
 );
 
-// Starting both http & https servers
-const httpServer = http.createServer(app);
-const io = socketIO(httpServer);
-
-httpServer.listen(3000, () => console.log("HTTP Server running on port 3000"));
-
-io.on("connection", (socket) => {
-  console.log("a user connected");
-});
-
 /////////
 const privKeyFileName = "/etc/letsencrypt/live/aelatgt.net/privkey.pem";
 const certFileName = "/etc/letsencrypt/live/aelatgt.net/cert.pem";
 const chainFileName = "/etc/letsencrypt/live/aelatgt.net/chain.pem";
+
+var httpServer;
 
 if (
   fs.existsSync(privKeyFileName) &&
@@ -47,10 +39,22 @@ if (
     ca: ca,
   };
 
-  const httpsServer = https.createServer(credentials, app);
-  httpsServer.listen(3001, () =>
+  httpServer = https.createServer(credentials, app);
+  httpServer.listen(3001, () =>
     console.log("HTTPS Server running on port 3001")
   );
 } else {
   console.log("https certs are not available, not starting https server");
+  httpServer = http.createServer(app);
+
+  httpServer.listen(3000, () => 
+    console.log("HTTP Server running on port 3000")
+  );
 }
+
+// Starting for either the http or https servers
+const io = socketIO(httpServer);
+
+io.on("connection", (socket) => {
+  console.log("a user connected");
+});
