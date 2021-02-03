@@ -9,10 +9,10 @@ const app = express();
 app.use(express.static("public"));
 
 app.get(
-  "/.well-known/acme-challenge/sdk7Ne4KyfDw6dLwD39qIqJ8BcFiAWTLYLeZjhE9ylc",
+  "/.well-known/acme-challenge/sj7A1CN-B-DNbFoAhd2_JglCNzlarqO4vMA9hOTFV9M",
   (req, res) => {
     res.send(
-      "sdk7Ne4KyfDw6dLwD39qIqJ8BcFiAWTLYLeZjhE9ylc.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI"
+      "sj7A1CN-B-DNbFoAhd2_JglCNzlarqO4vMA9hOTFV9M.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI"
     );
   }
 );
