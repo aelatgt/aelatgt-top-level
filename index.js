@@ -8,6 +8,8 @@ const app = express();
 
 app.use(express.static("public"));
 
+require('./routes/air-quality-dashboard')(app)
+
 app.get(
   "/.well-known/acme-challenge/sj7A1CN-B-DNbFoAhd2_JglCNzlarqO4vMA9hOTFV9M",
   (req, res) => {
