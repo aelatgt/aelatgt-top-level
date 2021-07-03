@@ -10,10 +10,10 @@ app.use(express.static("public"));
 
 require('./routes/air-quality-dashboard')(app)
 
-app.get("/.well-known/acme-challenge/OzgyUDzGILp761UW7gkB3xyuUNSomDcJNpGCQQui4uE",
+app.get("/.well-known/acme-challenge/IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA",
     (req, res) => {
       res.send(
-        "OzgyUDzGILp761UW7gkB3xyuUNSomDcJNpGCQQui4uE.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI");
+        "IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI");
   }
 );
 
