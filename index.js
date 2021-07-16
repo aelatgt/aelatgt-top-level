@@ -10,12 +10,12 @@ app.use(express.static("public"));
 
 require('./routes/air-quality-dashboard')(app)
 
-app.get("/.well-known/acme-challenge/IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA",
-    (req, res) => {
-      res.send(
-        "IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI");
-  }
-);
+// app.get("/.well-known/acme-challenge/IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA",
+//     (req, res) => {
+//       res.send(
+//         "IlI7Ugl_AhD9cPLrsmCSXAKBJfrWBpHfNr-3UuZkSBA.VeFbm-Pcx9jG1LNNYKt1-ssk8U1QMse-QJsLzcWPGiI");
+//   }
+// );
 
 /////////
 const privKeyFileName = "/etc/letsencrypt/live/aelatgt.net/privkey.pem";
